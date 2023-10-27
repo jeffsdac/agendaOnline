@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt_br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>EpiContact</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">EpiContacts</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="active"><a href="/contact">Familia</a></li>
+            <li><a href="#">Amigos</a></li>
+            <li><a href="#">Perfil</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <main class="container">
+       
+        <h3>Cadastrar novo contato</h3>
+
+        <div class="card-panel">
+          <form action="/contact" method="post" th:object="${contact}">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">person</i>
+              <input th:field="*{contname}" th:value="*{contname}" type="text" class="validate">
+              <label for="contname">Nome do contato</label>
+              <span class="helper-text red-text" th:errors="*{contname}"></span>
+              
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input th:field="*{contnumber}" type="tel" class="validate">
+              <label for="contnumber">Telefone (Sem DDD)</label>
+              <span class="helper-text red-text" th:errors="*{contnumber}"></span>
+            </div>
+            <div class="card-actions right-align">
+              <a href="/contact" class="waves-effect waves-teal btn-flat ">Cancelar</a>
+                <button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Salvar
+                  <i class="material-icons right">send</i>
+                </button>
+            </div>
+          </form>
+
+        </div>
+
+    </main>
+
+    
+</body>
+</html>
