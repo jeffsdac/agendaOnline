@@ -14,9 +14,9 @@
         <div class="nav-wrapper">
           <a href="#" class="brand-logo">EpiContacts</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class="active"><a href="/contact">Familia</a></li>
-            <li><a href="#">Amigos</a></li>
-            <li><a href="#">Perfil</a></li>
+            <li class="active"><a href="/contact" th:text="#{contact.family}"></a></li>
+            <li><a href="#" th:text="#{contact.friends}" ></a></li>
+            <li><a href="#" th:text="#{user.profile}"></a></li>
             <li>
                   <!-- Dropdown Trigger -->
                 <a class='dropdown-trigger' href='#' data-target='dropdown1'> <img th:src="${avatar_url}"width="45" class="circle responsive-img" alt="Foto de perfil do usuario"></a>
@@ -39,7 +39,7 @@
         
         <ul class="collection">
             <li class="collection-item avatar" th:each="contact: ${contacts}">
-                <img src="" alt="" class="circle responsive-img" >
+                <img src="https://www.promoview.com.br/uploads/images/unnamed%2819%29.png" alt="" class="circle responsive-img" >
                 <span class="contname" th:text="${contact.contname}"></span>
                 <p th:text="${contact.contnumber}"></p>
               <a th:href="${'/contact/delete/' + contact.id}" class="secondary-content btn red"><i class="material-icons">delete</i></a>
