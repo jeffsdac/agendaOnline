@@ -25,7 +25,7 @@
         <h3>Cadastrar novo contato</h3>
 
         <div class="card-panel">
-          <form action="/contact" method="post" th:object="${contact}">
+          <form th:action="${'/contact'}" method="post" th:object="${contact}">
             <div class="input-field col s6">
               <i class="material-icons prefix">person</i>
               <input th:field="*{contname}" th:value="*{contname}" type="text" class="validate">

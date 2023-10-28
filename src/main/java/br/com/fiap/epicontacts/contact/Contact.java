@@ -18,7 +18,7 @@ public class Contact {
     @NotBlank
     String contname;
 
-    @Pattern(regexp="[0-9]{8,9}", message="O número de telefone deve ter 8 ou 9 dígitos")
+    @Pattern(regexp="[0-9]{8,9}", message="{contact.contnumber.size}")
     String contnumber;
 
     
