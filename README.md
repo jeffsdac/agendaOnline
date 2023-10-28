@@ -1,2 +1,2 @@
-# agendaOnline
- App para criação de usuário em uma agenda online
+# EpiContacts
+ App para criação de uma lista de contatos para a aula de DIGITAL BUSINESS ENABLEMENT da FIAP.
